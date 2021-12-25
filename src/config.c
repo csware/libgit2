@@ -1168,6 +1168,7 @@ int git_config_find_programdata(git_buf *path)
 	return error;
 }
 
+#ifndef GIT_DEPRECATE_HARD
 int git_config__find_programdata(git_str *path)
 {
 	int ret;
@@ -1179,6 +1180,7 @@ int git_config__find_programdata(git_str *path)
 
 	return git_fs_path_validate_system_file_ownership(path->ptr);
 }
+#endif
 
 int git_config__global_location(git_str *buf)
 {
